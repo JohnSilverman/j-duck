@@ -1,0 +1,6 @@
+let num1 ;
+let num2 ;
+input ( num1 , "num1 :" ) ;
+input ( num2 , "num2 :" ) ;
+let sum = num1 + num2 ;
+print ( sum ) ;
