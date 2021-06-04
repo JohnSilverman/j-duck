@@ -45,6 +45,7 @@ FACT -> LOGI == LOGI \
 FACT -> LOGI \
 LOGI -> ID \
 LOGI -> Constant <br />
+LOGI -> ( EXP )
 
 ID -> Alphabet AlphaNum* \
 Constant -> 정수 숫자 \
