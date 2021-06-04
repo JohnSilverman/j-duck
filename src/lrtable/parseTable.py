@@ -1,4 +1,4 @@
-symbols = "if	(	)	{	}	else	let	ID	;	=	print	String	input	,	+	-	*	/	>	<	>=	<=	==	Constant	$	S	Stmts	IfStmt	ElseStmt	LetStmt	IOStmt	EXP	TERM	FACT	LOGI"
+symbols = "ID	=	;	if	(	)	{	}	else	let	print	String	input	,	+	-	*	/	>	<	>=	<=	==	Constant	$	S	Stmts	AssignStmt	IfStmt	ElseStmt	LetStmt	IOStmt	EXP	TERM	FACT	LOGI"
 symbols = symbols.split("\t")
 
 def get():

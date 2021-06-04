@@ -6,8 +6,10 @@ PRODUCTION_RULE = \
 Stmts -> IfStmt Stmts
 Stmts -> LetStmt Stmts
 Stmts -> IOStmt Stmts
+Stmts -> AssignStmt Stmts
 Stmts -> EXP Stmts
 Stmts -> ''
+AssignStmt -> ID = EXP ;
 IfStmt -> if ( EXP ) { Stmts } ElseStmt
 ElseStmt -> else { Stmts }
 ElseStmt -> ''
@@ -158,7 +160,7 @@ def lrparse(tokenlist):
 			elif action == "acc":
 				# for symbol in symbolcount:
 				# 	print(symbol,symbolcount[symbol])
-				print(nodestack)
+				#print(nodestack)
 				print("ACCEPT")
 				return nodestack[-1]
 
