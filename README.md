@@ -25,7 +25,7 @@ IfStmt -> if ( EXP ) { Stmts } ElseStmt <br />
 ElseStmt -> else { Stmts } <br />
 ElseStmt -> '' <br />
 LetStmt -> let ID ; <br />
-LetStmt -> let ID = Constant ; <br />
+LetStmt -> let ID = EXP ; <br />
 IOStmt -> print ( ID ) ; \
 IOStmt -> print ( String ) ; <br/>
 IOStmt -> print ( Constant ) ; \
