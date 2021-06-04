@@ -1,3 +1,6 @@
+symbols = "if	(	)	{	}	else	let	ID	;	=	print	String	input	,	+	-	*	/	>	<	>=	<=	==	Constant	$	S	Stmts	IfStmt	ElseStmt	LetStmt	IOStmt	EXP	TERM	FACT	LOGI"
+symbols = symbols.split("\t")
+
 def get():
 	file = open("lrtable/parsing table.txt","r")
 	lines = file.readlines()
@@ -6,9 +9,13 @@ def get():
 	lrtable = get_table(lines)
 	return lrtable
 
-symbols = "if	(	)	{	}	else	let	ID	;	=	print	String	input	,	+	-	*	/	>	<	>=	<=	==	Constant	$	S	Stmts	IfStmt	ElseStmt	LetStmt	IOStmt	EXP	TERM	FACT	LOGI".split("\t")
 def get_symbols():
 	return symbols
+
+
+
+
+
 
 def get_table(lines): 
 
@@ -19,7 +26,7 @@ def get_table(lines):
 		line = line.strip().replace(" ","S").split("\t")
 		lrtable.append({})
 
-		del line[0]
+		del line[0] #state 번호 
 		i = -1
 		for action in line:
 			i += 1

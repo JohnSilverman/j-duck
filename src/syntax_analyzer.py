@@ -33,6 +33,8 @@ LOGI -> ID
 LOGI -> Constant
 LOGI -> ( EXP )"""
 
+#생성규칙을 리스트형태로
+#PRODUCTION_RULE[i][0]이 생성규칙 왼쪽이고 [1]이 오른쪽
 PRODUCTION_RULE = PRODUCTION_RULE.split("\n")
 for i in range(len(PRODUCTION_RULE)):
 	PRODUCTION_RULE[i] = PRODUCTION_RULE[i].split("->")
@@ -50,6 +52,7 @@ def reduce_err(rule):
 	print("Reduce error",PRODUCTION_RULE[rule])
 	exit(-1)
 
+#Parse Tree
 class Node:
 	def __init__(self):
 		self.token = None
@@ -68,6 +71,7 @@ class Node:
 symbollist = PT.get_symbols()
 nodestack = []
 
+#핵심 파싱함수
 def lrparse(tokenlist):
 
 	stack = [0]
@@ -85,8 +89,8 @@ def lrparse(tokenlist):
 
 	def reduce(rule):
 		popnum = len(PRODUCTION_RULE[rule][1])
-		top_symbol = PRODUCTION_RULE[rule][0]
-		newtoken = (top_symbol,None)
+		left_nonterminal = PRODUCTION_RULE[rule][0]
+		newtoken = (left_nonterminal,None)
 
 		newnode = Node()
 		newnode.set_token(newtoken)
@@ -110,39 +114,38 @@ def lrparse(tokenlist):
 			newnode.add_child(epsnode)
 
 		if tmp[::-1]!=PRODUCTION_RULE[rule][1]:
-			print("STACK",stack)
-			print("TMP",tmp[::-1])
-			print("RULE",PRODUCTION_RULE[rule][1])
+			# print("STACK",stack)
+			# print("TMP",tmp[::-1])
+			# print("RULE",PRODUCTION_RULE[rule][1])
 			reduce_err(rule)
 
-		state = stack[-1]
+		current_state = stack[-1]
 		stack.append(newtoken)
 
-		if top_symbol not in lrtable[state]:
+		if left_nonterminal not in lrtable[current_state]:
 			reduce_err(rule)
 		else:
-			stack.append(int(lrtable[state][top_symbol]))
+			stack.append(int(lrtable[current_state][left_nonterminal])) #goto
 
 	output = open("output/parse_result.txt","w",encoding="utf-8")
 
-	tp = 0
-	tp_max = len(tokenlist)-1
+	tp = 0 #tokenlist pointer
 	while True:
-		state = stack[-1]
+		current_state = stack[-1]
 
 		#print("STACKLOG",stack)
 
 		nxt_token = tokenlist[tp]
 		#print("next token=",nxt_token)
 
-		output.write("STATE "+str(state)+"\t'"+nxt_token[0]+"'\tSTACK "+str(stack)+"\n")
+		output.write("STATE "+str(current_state)+"\t'"+nxt_token[0]+"'\tSTACK "+str(stack)+"\n")
 
-		if nxt_token[0] not in lrtable[state]:
-			print("STATE",state)
-			print("NEXT TOKEN",nxt_token[0])
-			error(list(lrtable[state].keys()),nxt_token[0])
+		if nxt_token[0] not in lrtable[current_state]:
+			# print("STATE",current_state)
+			# print("NEXT TOKEN",nxt_token[0])
+			error(list(lrtable[current_state].keys()),nxt_token[0])
 		else:
-			action = lrtable[state][nxt_token[0]]
+			action = lrtable[current_state][nxt_token[0]]
 
 			if "s" in action:
 				shiftto = int(action[1:])
