@@ -19,8 +19,10 @@ S -> Stmts \
 Stmts -> IfStmt Stmts \
 Stmts -> LetStmt Stmts \
 Stmts -> IOStmt Stmts \
+Stmts -> AssignStmt Stmts \
 Stmts -> EXP Stmts \
 Stmts -> '' \
+AssignStmt -> ID = EXP ; \
 IfStmt -> if ( EXP ) { Stmts } ElseStmt <br />
 ElseStmt -> else { Stmts } <br />
 ElseStmt -> '' <br />
