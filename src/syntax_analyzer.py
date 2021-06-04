@@ -104,6 +104,11 @@ def lrparse(tokenlist):
 		#print("TRAVERSE")
 		#traverse_tree(newnode)
 
+		if popnum==0:
+			epsnode = Node()
+			epsnode.set_token(("eps",None))
+			newnode.add_child(epsnode)
+
 		if tmp[::-1]!=PRODUCTION_RULE[rule][1]:
 			print("STACK",stack)
 			print("TMP",tmp[::-1])
