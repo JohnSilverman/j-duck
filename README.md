@@ -25,14 +25,14 @@ IfStmt -> if ( EXP ) { Stmts } ElseStmt \
 ElseStmt -> else { Stmts } \
 ElseStmt -> '' \ 
 LetStmt -> let ID ; \ 
-LetStmt -> let ID = Constant ; \ 
+LetStmt -> let ID = Constant ; \
 IOStmt -> print ID ; \
-IOStmt -> print ( Constant ) ; \ 
-IOStmt -> input ID ; \ 
-IOStmt -> input ID prompt String ; \  
-EXP -> TERM + TERM \ 
-EXP -> TERM - TERM \ 
-EXP -> TERM \ 
+IOStmt -> print ( Constant ) ; \
+IOStmt -> input ID ; \
+IOStmt -> input ID prompt String ; \
+EXP -> TERM + TERM \
+EXP -> TERM - TERM \
+EXP -> TERM \
 TERM -> FACT * FACT \
 TERM -> FACT / FACT \
 TERM -> FACT \
@@ -50,4 +50,4 @@ Constant -> 정수 숫자 \
 Alphabet -> 영어알파벳이랑 언더스코어 \
 AlphaNum -> Alphabet이랑 Digit \
 String -> Alphabet+ \
-Digit -> 0부터 9까지 \ 
+Digit -> 0부터 9까지 \n
