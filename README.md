@@ -26,9 +26,8 @@ ElseStmt -> else { Stmts } <br />
 ElseStmt -> '' <br />
 LetStmt -> let ID ; <br />
 LetStmt -> let ID = EXP ; <br />
-IOStmt -> print ( ID ) ; \
+IOStmt -> print ( EXP ) ; \
 IOStmt -> print ( String ) ; <br/>
-IOStmt -> print ( Constant ) ; \
 IOStmt -> input ( ID ) ; \
 IOStmt -> input ( ID , String ) ; \
 EXP -> TERM + TERM \
