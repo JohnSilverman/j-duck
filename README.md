@@ -43,11 +43,11 @@ FACT -> LOGI <= LOGI \
 FACT -> LOGI == LOGI \
 FACT -> LOGI \
 LOGI -> ID \
-LOGI -> Constant \
+LOGI -> Constant <br />
 
 ID -> Alphabet AlphaNum* \
 Constant -> 정수 숫자 \
 Alphabet -> 영어알파벳이랑 언더스코어 \
 AlphaNum -> Alphabet이랑 Digit \
 String -> Alphabet+ \
-Digit -> 0부터 9까지 \n
+Digit -> 0부터 9까지 <br />
