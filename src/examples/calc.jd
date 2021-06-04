@@ -1,0 +1,22 @@
+let num1;
+let num2;
+let op;
+input(num1, "첫 번째 숫자 : ");
+input(num2, "두 번재 숫자 : ");
+input(op, "연산자 (1:더하기, 2:빼기, 3:곱하기, 4:나누기) : ");
+if(op==1){
+	print("더한 결과");
+	print(num1+num2);
+}
+if(op==2){
+	print("뺀 결과");
+	print(num1-num2);	
+}
+if(op==3){
+	print("곱한 결과");
+	print(num1*num2);
+}
+if(op==4){
+	print("나눈 결과");
+	print(num1/num2);
+}
