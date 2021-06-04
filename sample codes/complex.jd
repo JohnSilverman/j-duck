@@ -1,0 +1,2 @@
+let complex_exp = ( 10 + 5 ) * ( ( 22 - 10 ) / 2 ) + 17
+print ( complex_exp )
