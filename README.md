@@ -5,8 +5,7 @@ python으로 쓴 간단한 프로그래밍 언어
 구성
 1. 어휘 분석기
 2. 구문 분석기 
-3. 의미 분석 및 중간 코드 생성기
-4. 중간 코드 시뮬레이터
+3. 시뮬레이터
 
 기능
 1. 변수 선언 let 
@@ -53,20 +52,3 @@ Alphabet -> 영어알파벳이랑 언더스코어 \
 AlphaNum -> Alphabet이랑 Digit \
 String -> Alphabet+ \
 Digit -> 0부터 9까지 <br />
-
-
-중간 코드 \
-DEF variabl_name \
-MOV DST SRC<br/>
-ADD DST SRC1 SRC2<br/>
-SUB DST SRC1 SRC2<br/>
-MUL DST SRC1 SRC2<br/>
-DIV DST SRC1 SRC2<br/>
-LABEL labelname<br/>
-CALL funcname ARG1 ARG2 ...<br/>
-JMP labelname<br/>
-JG labelname DST SRC<br/>
-JGE labelname DST SRC<br/>
-JE labelname DST SRC<br/>
-JL labelname DST SRC<br/>
-JLE labelname DST SRC<br/>
