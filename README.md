@@ -25,11 +25,11 @@ IfStmt -> if ( EXP ) { Stmts } ElseStmt <br />
 ElseStmt -> else { Stmts } <br />
 ElseStmt -> '' <br />
 LetStmt -> let ID ; <br />
-LetStmt -> let ID = Constant ; <br />
-IOStmt -> print ID ; \
-IOStmt -> print ( Constant ) ; \
-IOStmt -> input ID ; \
-IOStmt -> input ID prompt String ; \
+LetStmt -> let ID = EXP ; <br />
+IOStmt -> print ( EXP ) ; \
+IOStmt -> print ( String ) ; <br/>
+IOStmt -> input ( ID ) ; \
+IOStmt -> input ( ID , String ) ; \
 EXP -> TERM + TERM \
 EXP -> TERM - TERM \
 EXP -> TERM \
@@ -44,6 +44,7 @@ FACT -> LOGI == LOGI \
 FACT -> LOGI \
 LOGI -> ID \
 LOGI -> Constant <br />
+LOGI -> ( EXP )
 
 ID -> Alphabet AlphaNum* \
 Constant -> 정수 숫자 \
