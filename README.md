@@ -21,11 +21,11 @@ Stmts -> LetStmt Stmts \
 Stmts -> IOStmt Stmts \
 Stmts -> EXP Stmts \
 Stmts -> '' \
-IfStmt -> if ( EXP ) { Stmts } ElseStmt \
-ElseStmt -> else { Stmts } \
-ElseStmt -> '' \ 
-LetStmt -> let ID ; \ 
-LetStmt -> let ID = Constant ; \
+IfStmt -> if ( EXP ) { Stmts } ElseStmt <br />
+ElseStmt -> else { Stmts } <br />
+ElseStmt -> '' <br />
+LetStmt -> let ID ; <br />
+LetStmt -> let ID = Constant ; <br />
 IOStmt -> print ID ; \
 IOStmt -> print ( Constant ) ; \
 IOStmt -> input ID ; \
