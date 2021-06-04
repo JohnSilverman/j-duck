@@ -140,6 +140,8 @@ def lex(codestring):
 		else :
 			error(codestring,i)
 
+
+	print("Lex OK")
 	return tokenlist + [("$","END")]
 
 def main():

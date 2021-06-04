@@ -73,12 +73,12 @@ def IOSTMT(node):
 		elif node.children[2].token[0] == "String":
 			print(STRING(node.children[2]))
 	elif func == "input":
-		if node.children[4].token[0] == "String":
-			print(STRING(node.children[4]),end='')
-		
 		name = node.children[2].token[1]
 		if name not in mem:
 			print_error(0,name)
+
+		if node.children[4].token[0] == "String":
+			print(STRING(node.children[4]),end='')
 
 		input_data = input()
 		if not input_data.isdigit():
