@@ -14,7 +14,7 @@ python으로 쓴 간단한 프로그래밍 언어
 4. 연산자 : 사칙연산, 비교 
 5. 입출력 : print, input 
 
-문법 
+BNF 정의 \
 S -> Stmts \
 Stmts -> IfStmt Stmts \
 Stmts -> LetStmt Stmts \
