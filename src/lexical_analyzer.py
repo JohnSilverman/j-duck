@@ -10,6 +10,7 @@ def isAlpha(ch):
 		or (ord(ch) >= ord('A') and ord(ch) <= ord('Z'))\
 			or ch=='_'
 
+#use this function!!!
 def lex(codestring):
 	codestring += '$'
 	tokenlist = []
@@ -139,14 +140,17 @@ def lex(codestring):
 		else :
 			error(codestring,i)
 
-	return tokenlist
+	return tokenlist + [("$","END")]
 
 def main():
 	codefile = open(input("Enter code file path : "),"r",encoding="utf-8")
 	tokenlist = lex(codefile.read())
 	codefile.close()
+	output = open("output/lex_result.txt","w",encoding="utf-8")
 	for token in tokenlist:
 		print(token)
+		output.write(token[0] + "\t" + str(token[1])+"\n")
+	output.close()
 
 if __name__=="__main__":
 	main()

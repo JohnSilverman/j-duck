@@ -1,0 +1,32 @@
+let	None
+ID	num1
+;	None
+let	None
+ID	num2
+;	None
+input	None
+(	None
+ID	num1
+,	None
+String	num1 :
+)	None
+;	None
+input	None
+(	None
+ID	num2
+,	None
+String	num2 :
+)	None
+;	None
+let	None
+ID	sum
+=	None
+ID	num1
++	None
+ID	num2
+;	None
+print	None
+(	None
+ID	sum
+)	None
+;	None
