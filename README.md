@@ -15,7 +15,7 @@ python으로 쓴 간단한 프로그래밍 언어
 5. 입출력 : print, input 
 
 문법 
-S -> Stmts
+S -> Stmts \
 Stmts -> IfStmt Stmts
 Stmts -> LetStmt Stmts
 Stmts -> IOStmt Stmts
