@@ -6,6 +6,8 @@ def print_error(code,debug_data):
 		print("에러! 변수를 선언하지 않았습니다 :", debug_data)
 	elif code==1:
 		print("에러! 이미 선언된 변수를 재선언합니다 :", debug_data)
+	elif code==2:
+		print("에러! 숫자만 입력 가능합니다 :",debug_data)
 	else:
 		print("에러!",debug_data)
 	exit(-1)
@@ -72,13 +74,16 @@ def IOSTMT(node):
 			print(STRING(node.children[2]))
 	elif func == "input":
 		if node.children[4].token[0] == "String":
-			print(STRING(node.children[4]))
+			print(STRING(node.children[4]),end='')
 		
 		name = node.children[2].token[1]
 		if name not in mem:
 			print_error(0,name)
 
-		mem[name] = int(input())
+		input_data = input()
+		if not input_data.isdigit():
+			print_error(2,input_data)
+		mem[name] = int(input_data)
 
 def EXP(node):
 	if len(node.children)==1:

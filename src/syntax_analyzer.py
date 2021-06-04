@@ -161,7 +161,7 @@ def lrparse(tokenlist):
 				# for symbol in symbolcount:
 				# 	print(symbol,symbolcount[symbol])
 				#print(nodestack)
-				print("ACCEPT")
+				print("Syntax OK")
 				return nodestack[-1]
 
 def traverse_tree(node):
