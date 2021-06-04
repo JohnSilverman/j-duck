@@ -42,7 +42,6 @@ FACT -> LOGI < LOGI \
 FACT -> LOGI >= LOGI \
 FACT -> LOGI <= LOGI \
 FACT -> LOGI == LOGI \
-FACT -> LOGI != LOGI \
 FACT -> LOGI \
 LOGI -> ID \
 LOGI -> Constant <br />
