@@ -1,5 +1,5 @@
 let age ;
-input ( age , "나이 :" )
+input ( age , "나이 :" ) ;
 if ( age < 20 ) {
 	print ( "청소년은 이용하실 수 없습니다" ) ;
 } else {
