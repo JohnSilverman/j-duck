@@ -55,8 +55,9 @@ String -> Alphabet+ \
 Digit -> 0부터 9까지 <br />
 
 
-중간 코드
-MOV DST SRC : SRC값을 DST로 복사<br/>
+중간 코드 \
+DEF variabl_name \
+MOV DST SRC<br/>
 ADD DST SRC1 SRC2<br/>
 SUB DST SRC1 SRC2<br/>
 MUL DST SRC1 SRC2<br/>
